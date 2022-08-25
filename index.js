@@ -14,9 +14,16 @@ const tutorials = [
 const newArray = [];
 const titleCased = () => {
   tutorials.map((tutorial) => {
-    const newTutorial = tutorial.charAt(0).toUpperCase() + tutorial.slice(1);
-    console.log(newTutorial);
-    newArray.push(newTutorial);
+    const splitString = tutorial.split(" ")
+    const joinedString = []
+    splitString.map ((string) => {
+      const newTutorial = string.charAt(0).toUpperCase() + string.slice(1);
+      joinedString.push(newTutorial)
+    } )
+    
+    const upperCasedString = joinedString.join (" ")
+    
+    newArray.push(upperCasedString);
   });
   return newArray;
 };
